@@ -1,0 +1,32 @@
+body {
+    font-family: Georgia, serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 1em auto;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    margin: 1em;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 0.8em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Reading log only */
+
+#log {
+    font-size: 0.8em;
+}
+
+.time {
+    opacity: 0.5;
+    font-size: 0.5em;
+}
