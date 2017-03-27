@@ -4,13 +4,13 @@
 
 
 // Log reading
-var x = open('https://alec-reads.gomix.me/read?secret=PASTESECRETHERE&url=' + encodeURIComponent(document.URL));
+var x = open('https://alec-reads.glitch.me/read?secret=PASTESECRETHERE&url=' + encodeURIComponent(document.URL));
 setTimeout(function() {
     x.close();
 }, 1000);
 
 //Star reading
-var y = open('https://alec-reads.gomix.me/read?secret=PASTESECRETHERE&url=' + encodeURIComponent(document.URL) +
+var y = open('https://alec-reads.glitch.me/read?secret=PASTESECRETHERE&url=' + encodeURIComponent(document.URL) +
     '&star=%20' + encodeURIComponent(prompt('Comment?')));
 setTimeout(function() {
     y.close();

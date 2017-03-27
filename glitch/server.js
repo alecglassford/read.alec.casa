@@ -1,8 +1,8 @@
 var firebase = require("firebase");
 var config = {
-  apiKey: "AIzaSyDTfoIGcBT9dpT67fzcOWcwmER29rD0X0M",
-  authDomain: "portfolio-8b0ef.firebaseapp.com",
-  databaseURL: "https://portfolio-8b0ef.firebaseio.com",
+  apiKey: "AIzaSyCdaNaedBlFJh69UklN3HBjW1_cd6CU9aI",
+  authDomain: "read-8074e.firebaseapp.com",
+  databaseURL: "https://read-8074e.firebaseio.com/",
 };
 firebase.initializeApp(config);
 firebase.auth().signInWithEmailAndPassword(process.env.EMAIL, process.env.PASSWORD);
@@ -40,7 +40,9 @@ app.get("/read", function (req, resp) {
       star: req.query.star ? req.query.star : false
     };
     db.ref('articles').push(result).then( () => {
-      resp.send('saved ' + JSON.stringify(result));
+      var doneMsg = 'saved ' + JSON.stringify(result)
+      console.log(doneMsg);
+      resp.send(doneMsg);
     });
   });
 });

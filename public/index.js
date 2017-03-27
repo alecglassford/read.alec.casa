@@ -16,8 +16,9 @@ var template = `
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyDTfoIGcBT9dpT67fzcOWcwmER29rD0X0M",
-    databaseURL: "https://portfolio-8b0ef.firebaseio.com",
+    apiKey: "AIzaSyCdaNaedBlFJh69UklN3HBjW1_cd6CU9aI",
+    authDomain: "read-8074e.firebaseapp.com",
+    databaseURL: "https://read-8074e.firebaseio.com/"
 };
 firebase.initializeApp(config);
 var db = firebase.database();
