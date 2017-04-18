@@ -2,6 +2,7 @@
   "name": "alec-reads",
   "version": "0.0.1",
   "description": "The server tool for https:// read.alec.casa - I ping this server with a bookmarklet to log reading",
+  "license": "MIT",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
