@@ -23,6 +23,20 @@ h1 {
 
 /* Reading log only */
 
+#recent {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+rect {
+  fill: #beaed4;
+}
+
+g text {
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+
 #log {
     font-size: 0.8em;
 }
