@@ -14,13 +14,6 @@ var template = `
     {{/articles}}
 `;
 
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyCdaNaedBlFJh69UklN3HBjW1_cd6CU9aI",
-    authDomain: "read-8074e.firebaseapp.com",
-    databaseURL: "https://read-8074e.firebaseio.com/"
-};
-firebase.initializeApp(config);
 var db = firebase.database();
 
 var query = db.ref('articles').orderByKey().once('value').then((snapshot) => {
