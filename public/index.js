@@ -34,7 +34,6 @@ function drawRecent(data) {
     .key(d => d.day).sortKeys(d3.ascending)
     .rollup(sumWcs)
     .entries(dayAndWc);
-  console.log(wordsPerDay);
 
   var width = 600,
       height = 160,
@@ -42,7 +41,6 @@ function drawRecent(data) {
       svg = d3.select('#recent svg')
           .attr('width', width)
           .attr('height', height + 2 * margin);
-
 
   var barWidth = width / wordsPerDay.length;
   var y = d3.scaleLinear()
@@ -74,7 +72,7 @@ function getRecent(data) {
   var oldest = new Date();
   var zeroes = [];
   for (var j = 0; j < LENGTH; j += 1) {
-    var month = oldest.getMonth(),
+    var month = oldest.getMonth() + 1,
         date = oldest.getDate();
     zeroes.push({day: `${month}/${date}`, wc: 0});
     oldest.setDate(oldest.getDate() - 1);
@@ -89,7 +87,7 @@ function getRecent(data) {
 
 function getDayAndWc(d) {
   var t = new Date(d.time),
-      month = t.getMonth(),
+      month = t.getMonth() + 1,
       date = t.getDate();
   return {day: `${month}/${date}`, wc: d.wc};
 }
