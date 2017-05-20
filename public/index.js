@@ -1,19 +1,5 @@
 'use strict';
 
-var template = `
-    {{#articles}}
-    <li>
-        <a href="{{url}}">{{title}}</a>
-        {{#time}}
-            <span class="time">{{time}}</span>
-        {{/time}}
-        {{#star}}
-            ⭐️<br>{{star}}
-        {{/star}}
-    </li>
-    {{/articles}}
-`;
-
 var db = firebase.database();
 
 var query = db.ref('articles').orderByKey().once('value').then((snapshot) => {
@@ -21,10 +7,30 @@ var query = db.ref('articles').orderByKey().once('value').then((snapshot) => {
   data = Object.keys(data).map(k => data[k]);
   data.reverse();
 
-  var output = Mustache.render(template, {articles: data});
-  document.getElementById('log').innerHTML = output;
+  writeLog(data);
   drawRecent(data);
 });
+
+function writeLog(data) {
+  var logItems = d3.select('#log').text('')
+    .selectAll('li')
+      .data(data)
+    .enter().append('li');
+
+  logItems.append('a')
+      .attr('href', d => d.url)
+      .text(d => d.title);
+
+  logItems.filter(d => d.time).append('span')
+    .attr('class', 'time')
+    .text(d => d.time);
+
+  var starred = logItems.filter(d => d.star);
+  starred.append('span')
+      .text('⭐️');
+  starred.append('div')
+      .text(d => d.star);
+}
 
 /* For the chart */
 
