@@ -83,8 +83,11 @@ function getRecent(data) {
     zeroes.push({day: `${month}/${date}`, wc: 0});
     oldest.setDate(oldest.getDate() - 1);
   }
+  oldest.setHours(23);
+  oldest.setMinutes(59);
+  oldest.setSeconds(59);
   for (var i in data) {
-    if (new Date(data[i].time) < oldest) break;
+    if (new Date(data[i].time) <= oldest) break;
   }
   return data.slice(0, i)
              .map(getDayAndWc)
