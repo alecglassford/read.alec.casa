@@ -78,9 +78,8 @@ function getRecent(data) {
   var oldest = new Date();
   var zeroes = [];
   for (var j = 0; j < LENGTH; j += 1) {
-    var month = oldest.getMonth() + 1,
-        date = oldest.getDate();
-    zeroes.push({day: `${month}/${date}`, wc: 0});
+    var day = oldest.toISOString().slice(5,10);
+    zeroes.push({day: day, wc: 0});
     oldest.setDate(oldest.getDate() - 1);
   }
   oldest.setHours(23);
@@ -96,9 +95,8 @@ function getRecent(data) {
 
 function getDayAndWc(d) {
   var t = new Date(d.time),
-      month = t.getMonth() + 1,
-      date = t.getDate();
-  return {day: `${month}/${date}`, wc: d.wc};
+      day = t.toISOString().slice(5,10);
+  return {day: day, wc: d.wc};
 }
 
 function sumWcs(articles) {
