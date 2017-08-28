@@ -14,11 +14,25 @@
         <script src="/__/firebase/init.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js" integrity="sha256-jJlsVPlSwQyGokYi0JgmrFRihc7ILE3Id8AB0dpr0JA=" crossorigin="anonymous"></script>
         <script src="index.js" defer></script>
+        <script type="text/javascript">
+          var _paq = _paq || [];
+          _paq.push(["setDoNotTrack", true]);
+          _paq.push(['trackPageView']);
+          _paq.push(['enableLinkTracking']);
+          (function() {
+            var u="//stat.alec.casa/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', '3']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+          })();
+        </script>
     </head>
     <body>
         <h1>Alec's reading log</h1>
         <p>I made <a href="https://github.com/alecglassford/read.alec.casa">a little thing</a> to track what I read online. Not necessarily comprehensive, but perhaps close. Stars (and sometimes commentary) with the links I like.</p>
         <div id="recent"><svg></svg></div>
         <ul id="log">Loading.</ul>
+        <noscript><p><img src="//stat.alec.casa/piwik.php?idsite=3&rec=1" style="border:0;" alt="" /></p></noscript>
     </body>
 </html>
