@@ -1,24 +1,28 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Alec's reading log</title>
-        <meta name="description" content="A not quite comprehensive list of what I've been reading online">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="main.css">
-        <link rel="icon" href="favicon.ico">
-        <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
-        <script src="/__/firebase/5.5.6/firebase-app.js"></script>
-        <script src="/__/firebase/5.5.6/firebase-database.js"></script>
-        <script src="/__/firebase/init.js"></script>
-        <script src="https://unpkg.com/d3@5.7.0/dist/d3.min.js" integrity="sha512-L5K9Bf852XyB+wrvRFGwWzfhVI+TZqJlgwzX9yvrfhILuzIZfrcQO4au9D9eVDnkQ6oqYr9v2QwJdFo+eKE50Q==" crossorigin="anonymous"></script>
-        <script src="index.js" defer></script>
-    </head>
-    <body>
-        <h1>Alec's reading log</h1>
-        <p>I made <a href="https://github.com/alecglassford/read.alec.casa">a little thing</a> to track what I read online. Not necessarily comprehensive, but perhaps close. Stars (and sometimes commentary) with the links I like.</p>
-        <div id="recent"><svg></svg></div>
-        <ul id="log">Loading.</ul>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alec's reading log</title>
+    <meta name="description" content="A not quite comprehensive list of what I've been reading online">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <h1>Alec's reading log</h1>
+    <p>I made <a href="https://github.com/alecglassford/read.alec.casa">a little thing</a> to track what I read online. Not necessarily comprehensive, but perhaps close. Stars (and sometimes commentary) with the links I like.</p>
+    <div id="recent"><svg></svg></div>
+    <ul id="log">
+      <div class="loading">
+        Loading. <lil-spinner></lil-spinner>
+      </div>
+    </ul>
+    
+    <script src="https://unpkg.com/lil-spinner@1.0.0/build/bundle.js" integrity="sha384-OOBOu8pCOX+oh2JtW6Kxhnk9QkSbgtHnWdgWShAZtdJcpLkp2JcD8KCfQgkpNAT9" crossorigin="anonymous"></script>
+    <script src="/__/firebase/5.5.6/firebase-app.js"></script>
+    <script src="/__/firebase/5.5.6/firebase-database.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="https://unpkg.com/d3@5.7.0/dist/d3.min.js" integrity="sha384-HL96dun1KbYEq6UT/ZlsspAODCyQ+Zp4z318ajUPBPSMzy5dvxl6ziwmnil8/Cpd" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
