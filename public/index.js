@@ -1,15 +1,12 @@
 'use strict';
 
-var db = firebase.database();
-
-var query = db.ref('articles').orderByKey().once('value').then((snapshot) => {
-  var data = snapshot.val();
-  data = Object.keys(data).map(k => data[k]);
-  data.reverse();
-
-  writeLog(data);
-  drawRecent(data);
-});
+fetch('https://alec-reads-new.glitch.me/page/0')
+  .then(res => res.json())
+  .then((data) => {
+    data.reverse();
+    writeLog(data);
+    drawRecent(data);
+  })
 
 function writeLog(data) {
   var logItems = d3.select('#log').text('')
