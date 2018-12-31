@@ -7,18 +7,14 @@
     <title>Alec's reading log</title>
     <meta name="description" content="A not quite comprehensive list of what I've been reading online">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="bundle.css">
   </head>
   <body>
-    <h1>Alec's reading log</h1>
-    <p>I made <a href="https://github.com/alecglassford/read.alec.casa">a little thing</a> to track what I read online. Not necessarily comprehensive, but perhaps close. Stars (and sometimes commentary) with the links I like.</p>
-    <div id="recent"><svg></svg></div>
-    <ul id="log">
-      <div class="loading">
-        Loading. <lil-spinner></lil-spinner>
-      </div>
-    </ul>
-    <script src="https://unpkg.com/lil-spinner@1.0.0/build/bundle.js" integrity="sha384-OOBOu8pCOX+oh2JtW6Kxhnk9QkSbgtHnWdgWShAZtdJcpLkp2JcD8KCfQgkpNAT9" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/d3@5.7.0/dist/d3.min.js" integrity="sha384-HL96dun1KbYEq6UT/ZlsspAODCyQ+Zp4z318ajUPBPSMzy5dvxl6ziwmnil8/Cpd" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+    <header>
+      <h1>Alec's reading log</h1>
+      <p>I made <a href="https://github.com/alecglassford/read.alec.casa">a little thing</a> to track what I read online. Not necessarily comprehensive, but perhaps close. Stars (and sometimes commentary) with the links I like.</p>
+    </header>
+    <main id="app"></main>
+    <script src="bundle.js"></script>
   </body>
 </html>
