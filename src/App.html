@@ -45,7 +45,7 @@
       return { page: 0 };
     },
     computed: {
-      log: ({ page }) => fetch(`https://alec-reads-new.glitch.me/page/${page}`)
+      log: ({ page }) => fetch(`https://alec-reads.glitch.me/page/${page}`)
         .then(res => res.json())
         .then(rows => rows.reverse()),
     },

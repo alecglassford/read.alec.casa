@@ -32,6 +32,5 @@
     "rollup-plugin-terser": "^3.0.0",
     "serve": "^10.1.1",
     "svelte": "^2.16.0"
-  },
-  "dependencies": {}
+  }
 }
