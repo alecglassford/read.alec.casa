@@ -27,9 +27,9 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.1",
     "lil-spinner": "^2.0.0",
-    "rollup": "^1.32.0",
+    "rollup": "^2.1.0",
     "rollup-plugin-svelte": "^5.1.1",
-    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-terser": "^5.3.0",
     "serve": "^11.3.0",
     "svelte": "^2.16.1"
   }
