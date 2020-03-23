@@ -14,8 +14,6 @@ export default {
 	},
 	plugins: [
 		svelte({
-			skipIntroByDefault: true,
-			nestedTransitions: true,
 			dev: !production,
 			css: (css) => {
 				css.write('public/bundle.css');

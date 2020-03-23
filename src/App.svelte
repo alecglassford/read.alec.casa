@@ -1,5 +1,5 @@
 {#if page > 0}
-  <button on:click="set({ page: page - 1 })">
+  <button on:click="{ () => page -= 1}">
     More recent
   </button>
 {/if}
@@ -26,7 +26,7 @@
       </li>
       {/each}
     </ul>
-    <button on:click="set({ page: page + 1})">
+    <button on:click="{ () => page += 1}">
       Back in time
     </button>
   {:else}
@@ -39,21 +39,13 @@
 <script>
   import LilSpinner from 'lil-spinner';
 
-  export default {
-    components: { LilSpinner },
-    data() {
-      return { page: 0 };
-    },
-    computed: {
-      log: ({ page }) => fetch(`https://alec-reads.glitch.me/page/${page}`)
-        .then(res => res.json())
-        .then(rows => rows.reverse()),
-    },
-    helpers: {
-      printDate(dateString) {
-        const date = new Date(dateString);
-        return date.toDateString();
-      }
-    },
+  let page = 0;
+  $: log = fetch(`https://alec-reads.glitch.me/page/${page}`)
+    .then(res => res.json())
+    .then(rows => rows.reverse());
+
+  const printDate = function printDate(dateString) {
+    const date = new Date(dateString);
+    return date.toDateString();
   };
 </script>
