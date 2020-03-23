@@ -2,7 +2,7 @@
 
 body {
   margin: 1em auto;
-  max-width: 600px;
+  max-width: 40em;
   width: 90%;
 }
 
@@ -19,6 +19,8 @@ a:hover, a:focus {
 
 h1 {
   font-size: 3em;
+  line-height: 1;
+  margin-bottom: 1rem;
 }
 
 /* Log */
