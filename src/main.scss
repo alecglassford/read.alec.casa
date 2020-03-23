@@ -1,33 +1,27 @@
+@use "../node_modules/bootstrap/scss/bootstrap-reboot.scss" as reboot;
+
 body {
   margin: 1em auto;
   max-width: 600px;
   width: 90%;
-  font-family: Georgia, serif;
-  font-size: 1.2em;
-  line-height: 1.6;
 }
 
 a:hover, a:focus {
+  color: reboot.$link-color;
   animation-name: pulsefont;
   animation-direction: alternate;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
-  animation-duration: 10s;
+  animation-duration: 3s;
 }
 
 /* header */
 
 h1 {
   font-size: 3em;
-  line-height: 0.8em;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* Log */
-
-main {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
 
 .loading {
   text-align: center;
@@ -49,9 +43,6 @@ li {
 }
 
 @keyframes pulsefont {
-  from {
-  }
-
   to {
     color: darkorchid;
   }
