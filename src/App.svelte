@@ -1,5 +1,5 @@
 {#if page > 0}
-  <button on:click="{ () => page -= 1}">
+  <button on:click="{ () => { page -= 1; }}">
     More recent
   </button>
 {/if}
@@ -26,7 +26,7 @@
       </li>
       {/each}
     </ul>
-    <button on:click="{ () => page += 1}">
+    <button on:click="{ () => { page += 1; }}">
       Back in time
     </button>
   {:else}
@@ -41,8 +41,8 @@
 
   let page = 0;
   $: log = fetch(`https://alec-reads.glitch.me/page/${page}`)
-    .then(res => res.json())
-    .then(rows => rows.reverse());
+    .then((res) => res.json())
+    .then((rows) => rows.reverse());
 
   const printDate = function printDate(dateString) {
     const date = new Date(dateString);

@@ -24,11 +24,16 @@
     "css": "sass --no-source-map --watch src/main.scss public/bundle-main.css",
     "css-min": "sass --no-source-map --style=compressed src/main.scss tmp/main.css && purifycss tmp/main.css public/*.html src/*.svelte -m -o=public/bundle-main.css",
     "build": "rollup -c && npm run css-min",
-    "dev": "npm run css & rollup -cw & serve public"
+    "dev": "npm run css & rollup -cw & serve public",
+    "lint": "eslint --ignore-path=.gitignore --ext=.js,.svelte ."
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.1",
     "bootstrap": "^4.4.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-svelte3": "^2.7.3",
     "lil-spinner": "^3.0.0",
     "purify-css": "^1.2.5",
     "rollup": "^2.1.0",
