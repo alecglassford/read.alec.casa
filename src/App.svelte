@@ -1,34 +1,23 @@
 {#if page > 0}
-  <button on:click="{ () => { page -= 1; }}">
-    More recent
-  </button>
+  <button on:click="{ () => { page -= 1; }}">More recent</button>
 {/if}
 
 {#await log}
-  <div class="loading">
-    Loading. <LilSpinner/>
-  </div>
+  <div class="loading">Loading. <LilSpinner/></div>
 {:then rows}
   {#if rows.length}
     <ul>
       {#each rows as row}
       <li>
-        <a href="{row.url}">
-          {row.title}
-          {#if row.star}️⭐️️{/if}
-        </a>
+        <a href="{row.url}">{row.title} {#if row.star}⭐️️{/if}</a>
         <div class="time">{printDate(row.time)}</div>
         {#if row.star && row.star.trim()}
-          <div>
-            {row.star.trim()}
-          </div>
+          <div>{row.star.trim()}</div>
         {/if}
       </li>
       {/each}
     </ul>
-    <button on:click="{ () => { page += 1; }}">
-      Back in time
-    </button>
+    <button on:click="{ () => { page += 1; }}">Back in time</button>
   {:else}
     <div class="loading">All done!</div>
   {/if}
