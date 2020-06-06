@@ -1,17 +1,17 @@
-#!/usr/bin/env node
+#!/usr/bin/env deno
 
-const fs = require('fs');
+const decoder = new TextDecoder("utf-8");
 
-const fetch = require('node-fetch');
-
-const buildEndpoint = function buildEndpoint() {
-  const secret = process.argv[2];
-  const [url, star] = fs.readFileSync(process.stdin.fd, 'utf8').split('***');
+const buildEndpoint = async function buildEndpoint() {
+  const [secret] = Deno.args;
+  const stdinBuf = await Deno.readAll(Deno.stdin);
+  const [url, star] = decoder.decode(stdinBuf).split("***");
   const encodedUrl = encodeURIComponent(url);
-  let endpoint = `https://alec-reads.glitch.me/read?secret=${secret}&url=${encodedUrl}`;
+  let endpoint =
+    `https://alec-reads.glitch.me/read?secret=${secret}&url=${encodedUrl}`;
   if (star) {
-    endpoint += '&star=%20';
-    if (star !== 'nocomment') {
+    endpoint += "&star=%20";
+    if (star !== "nocomment") {
       endpoint += star;
     }
   }
@@ -19,9 +19,9 @@ const buildEndpoint = function buildEndpoint() {
 };
 
 const main = async function main() {
-  const endpoint = buildEndpoint();
+  const endpoint = await buildEndpoint();
   try {
-    const res = await fetch(endpoint, { method: 'POST' });
+    const res = await fetch(endpoint, { method: "POST" });
     console.log(res.statusText);
   } catch (err) {
     console.log(err);

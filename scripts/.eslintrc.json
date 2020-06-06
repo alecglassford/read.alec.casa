@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "prettier"
+  ],
+  "rules": {
+    "no-return-await": "error",
+    "require-await": "error",
+    "no-async-promise-executor": "error"
+  }
+}
