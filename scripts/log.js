@@ -12,7 +12,7 @@ const buildEndpoint = async function buildEndpoint() {
   if (star) {
     endpoint += "&star=%20";
     if (star !== "nocomment") {
-      endpoint += star;
+      endpoint += encodeURIComponent(star);
     }
   }
   return endpoint;
